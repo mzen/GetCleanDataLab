@@ -31,11 +31,15 @@ project <- function() {
     selected_features <- features[sort(unique(c(f1, f2))), ]
     dataset <- all_datasets[, selected_features$V1]
     
-    # Uses descriptive activity names to name the activities in the data set
+    # Appropriately labels the data set with descriptive variable names
         # rename variables
     colnames(dataset) <- selected_features$V2
-        # don't miss these
+        # don't miss this
     dataset$subject <- all_datasets$subject
-    dataset$activity <- all_datasets$activity
     
+    # Uses descriptive activity names to name the activities in the data set
+    activity_labels <- read.table('activity_labels.txt', stringsAsFactors = F, strip.white = T)
+    activity <- as.factor(all_datasets$activity)
+    levels(activity) <- activity_labels$V2
+    dataset$activity <- activity
 }

@@ -21,9 +21,9 @@ Every experiment, that is a row, involved a subject, listed in "subject_[test|tr
 
 2) Extracts only the measurements on the mean and standard deviation for each measurement. 
 
-3) Uses descriptive activity names to name the activities in the data set
+3) Appropriately labels the data set with descriptive variable names. (was 4 in the original project)
 
-4) Appropriately labels the data set with descriptive variable names. 
+4) Uses descriptive activity names to name the activities in the data set (was 3 in the original project)
 
 5) From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
@@ -41,5 +41,11 @@ We use unique because we do not know if they used mean() and std() on the same v
 ### Step 3
 
 We use the same names of the original feature list + subject + activity
+
+
+### Step 4
+
+We read the file with activity names and convert the activity column (previously loaded in the data frame) to a factor with the same names
+
 
 
